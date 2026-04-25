@@ -1,0 +1,438 @@
+{
+  "chambers": [
+    {
+      "id": 1,
+      "name": "Sun Chamber",
+      "guardian": "Ra",
+      "accentColor": "#FFB300",
+      "backgroundDrawable": "egpt_back_1",
+      "symbolDrawable": "egpt_sym_1",
+      "introText": "I am Ra, the eternal sun, sovereign of all that breathes beneath my light. You dare enter my sacred chamber — know that my gaze burns through every falsehood. Answer with truth, or be consumed by my radiance.",
+      "completeText": "You have pleased the eternal sun. My light shall guide your path forward through the darkness that awaits.",
+      "questions": [
+        {
+          "id": "c1_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Which domain did Ra rule over?",
+          "options": ["The Sun", "The Moon", "The Nile", "The Underworld"],
+          "correctAnswer": "The Sun",
+          "correctReaction": "Yes — my dominion over the sun is absolute and eternal.",
+          "wrongReaction": "Foolish mortal, the answer blazes before you like the noon sky!",
+          "trapText": "The sand shifts and a blade of searing light cuts across the chamber floor."
+        },
+        {
+          "id": "c1_q2",
+          "type": "TRUE_FALSE",
+          "text": "Ra traveled across the sky each day in a solar barque.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Correct — each dawn I sail from the eastern horizon and my journey begins anew.",
+          "wrongReaction": "You deny the very voyage that brings your people light and warmth — how foolish.",
+          "trapText": "The chamber trembles as if struck by a wave from the sacred river of the sky."
+        },
+        {
+          "id": "c1_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "What form did Ra often take during the midday sun?",
+          "options": ["A scarab beetle", "A falcon with a sun disk", "A serpent", "A golden ox"],
+          "correctAnswer": "A falcon with a sun disk",
+          "correctReaction": "My falcon wings spread wide at the height of day — well known to the wise.",
+          "wrongReaction": "You mistake my divine form — look to the sky at noon and see the truth.",
+          "trapText": "A fierce wind tears through the chamber, and the torches gutter and die."
+        },
+        {
+          "id": "c1_q4",
+          "type": "TRUE_FALSE",
+          "text": "Ra and Amun were never merged into a single deity.",
+          "options": ["True", "False"],
+          "correctAnswer": "False",
+          "correctReaction": "Indeed — I became Amun-Ra, the hidden and the revealed, unified in glory.",
+          "wrongReaction": "The priests of Thebes would weep to hear such ignorance spoken in my hall.",
+          "trapText": "A hidden panel in the wall slides open and a jet of hot sand fills the air."
+        },
+        {
+          "id": "c1_q5",
+          "type": "RIDDLE",
+          "text": "I burn at the height of noon yet cool at dusk. I sail through the underworld each night and rise again each dawn. I am the source of all life in Egypt. What am I?",
+          "options": ["The Sun", "The Moon", "The Nile", "The Wind"],
+          "correctAnswer": "The Sun",
+          "correctReaction": "You have named me truly — I am the light that never dies.",
+          "wrongReaction": "You look at the sky every day and still cannot name what blazes above you?",
+          "trapText": "The stone floor glows red-hot as the wrath of the sun god fills the chamber."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Life Chamber",
+      "guardian": "Osiris",
+      "accentColor": "#00897B",
+      "backgroundDrawable": "egpt_back_2",
+      "symbolDrawable": "egpt_sym_2",
+      "introText": "I am Osiris, the first to die and the first to be reborn. From the depths of the Duat I have risen to sit in judgment across ages beyond counting. Prove that you carry wisdom worthy of resurrection, or be turned back into the dust from which you came.",
+      "completeText": "The scales of your knowledge rest in balance. You are worthy to walk deeper into the eternal mystery.",
+      "questions": [
+        {
+          "id": "c2_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Osiris was the god of which domain?",
+          "options": ["The afterlife and resurrection", "War and conquest", "Storms and chaos", "The sky and stars"],
+          "correctAnswer": "The afterlife and resurrection",
+          "correctReaction": "Yes — I am lord of the dead and keeper of the promise of rebirth.",
+          "wrongReaction": "You stand before the lord of resurrection and cannot name his own dominion.",
+          "trapText": "The green-lit walls of the chamber crack and a cold wind rushes in from the underworld."
+        },
+        {
+          "id": "c2_q2",
+          "type": "TRUE_FALSE",
+          "text": "Osiris was murdered by his brother Set.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "It is known — Set's treachery brought about my death and began the great cycle.",
+          "wrongReaction": "You deny the very betrayal that gave death its meaning in this sacred land.",
+          "trapText": "The ground beneath you opens into a narrow chasm and a damp darkness rises from below."
+        },
+        {
+          "id": "c2_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "What did the ankh symbol represent in ancient Egypt?",
+          "options": ["Life", "Death", "Power", "Wisdom"],
+          "correctAnswer": "Life",
+          "correctReaction": "The key of life — well answered, mortal.",
+          "wrongReaction": "The symbol I carry in every painting and statue and still you cannot read its meaning.",
+          "trapText": "Ancient hieroglyphs on the wall begin to glow red and the door behind you seals shut."
+        },
+        {
+          "id": "c2_q4",
+          "type": "TRUE_FALSE",
+          "text": "Osiris was depicted with green or black skin symbolizing rebirth and fertility.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Green for the fertile earth, black for the rich Nile silt — both speak of new life.",
+          "wrongReaction": "My very skin tells the story of renewal and yet you have not learned to read it.",
+          "trapText": "Vines of black stone snake across the floor and coil around the base of the altar."
+        },
+        {
+          "id": "c2_q5",
+          "type": "RIDDLE",
+          "text": "I am the key of eternity, a cross crowned with a loop, carried by gods and given to the worthy dead. What symbol am I?",
+          "options": ["The Ankh", "The Djed pillar", "The Was scepter", "The Eye of Horus"],
+          "correctAnswer": "The Ankh",
+          "correctReaction": "You have recognized the oldest symbol of life — your knowledge serves you well.",
+          "wrongReaction": "Every god and goddess in the sacred paintings holds this answer and still you falter.",
+          "trapText": "The floor tiles sink one by one as if swallowed by the earth itself."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Rebirth Chamber",
+      "guardian": "Khepri",
+      "accentColor": "#1565C0",
+      "backgroundDrawable": "egpt_back_3",
+      "symbolDrawable": "egpt_sym_3",
+      "introText": "I am Khepri, the dawn's first light, the rolling of hope across the horizon! Every morning I push the sun into the sky and the world begins again — can you not feel that energy here? Answer swiftly and with the spirit of renewal, and I shall let you pass into the next dawn!",
+      "completeText": "Excellent — you rise like the morning sun, strong and full of promise! Roll onward!",
+      "questions": [
+        {
+          "id": "c3_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Khepri was associated with which part of the sun's journey?",
+          "options": ["The rising morning sun", "The midday sun", "The setting sun", "The midnight sun"],
+          "correctAnswer": "The rising morning sun",
+          "correctReaction": "Yes — I am the burst of gold at the horizon, the first breath of a new day!",
+          "wrongReaction": "I am the dawn! The very moment you first open your eyes in the morning!",
+          "trapText": "A deep rumble shakes the chamber and stones rain down from the carved ceiling."
+        },
+        {
+          "id": "c3_q2",
+          "type": "TRUE_FALSE",
+          "text": "The scarab beetle was considered sacred in ancient Egypt.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Sacred indeed — the small beetle who rolls dung into life mirrors my own divine work!",
+          "wrongReaction": "Sacred and revered by all — how could you doubt the little creature who mirrors the cosmos?",
+          "trapText": "The walls close inward a hand's width and the blue torchlight flickers wildly."
+        },
+        {
+          "id": "c3_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Scarab amulets were placed on mummies to protect which organ?",
+          "options": ["The heart", "The brain", "The liver", "The lungs"],
+          "correctAnswer": "The heart",
+          "correctReaction": "The heart — the seat of the soul — guarded by the sacred scarab, perfectly answered!",
+          "wrongReaction": "The most vital organ, the one weighed in judgment, and you choose another?",
+          "trapText": "A stone scarab the size of a fist drops from the ceiling and cracks the floor at your feet."
+        },
+        {
+          "id": "c3_q4",
+          "type": "TRUE_FALSE",
+          "text": "Khepri was depicted as a man with a full scarab beetle as his head.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "That is my form — the beetle upon the shoulders of a man, rolling the sun forward!",
+          "wrongReaction": "My own face and you cannot describe it — look at the carvings on these very walls!",
+          "trapText": "Blue light drains from the chamber and only the faint glow of dawn cracks at the sealed door."
+        },
+        {
+          "id": "c3_q5",
+          "type": "RIDDLE",
+          "text": "I roll my treasure across the desert floor just as I roll the sun across the heavens each morning. I am small but sacred. What creature am I?",
+          "options": ["The scarab beetle", "The ibis", "The falcon", "The cobra"],
+          "correctAnswer": "The scarab beetle",
+          "correctReaction": "The sacred beetle — the smallest of creatures carrying the greatest of duties!",
+          "wrongReaction": "The creature whose rolling mirrors the movement of the sun itself — think harder!",
+          "trapText": "The chamber floor cracks open in a spiral pattern, and sand begins to pour through."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cat Chamber",
+      "guardian": "Bastet",
+      "accentColor": "#6A1B9A",
+      "backgroundDrawable": "egpt_back_4",
+      "symbolDrawable": "egpt_sym_4",
+      "introText": "I am Bastet, guardian of the hearth and protector of the innocent. I have watched you from the shadows since you first set foot in this place — my eyes miss nothing in the dark. Answer well, and I will shield you; falter, and you will feel claws far sharper than they appear.",
+      "completeText": "You have earned my protection. Move forward — my watchful eyes go with you into the deep chambers.",
+      "questions": [
+        {
+          "id": "c4_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Bastet was the goddess of which domain?",
+          "options": ["Home, protection, and cats", "War and storms", "The Nile and harvest", "The moon and magic"],
+          "correctAnswer": "Home, protection, and cats",
+          "correctReaction": "Well answered — I guard every home and every creature within it.",
+          "wrongReaction": "I have watched over hearths and families since before your ancestors drew breath.",
+          "trapText": "A low growl echoes through the chamber and purple flames flare up along the walls."
+        },
+        {
+          "id": "c4_q2",
+          "type": "TRUE_FALSE",
+          "text": "Killing a cat in ancient Egypt could result in death penalty.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "My children were sacred and the law of the land protected them absolutely.",
+          "wrongReaction": "To harm one of my sacred cats was among the gravest crimes known to Egypt.",
+          "trapText": "The shadows in the chamber deepen and the sound of padding paws circles the room."
+        },
+        {
+          "id": "c4_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "How was Bastet typically depicted?",
+          "options": ["A woman with a cat head", "A full lioness", "A sphinx", "A winged serpent"],
+          "correctAnswer": "A woman with a cat head",
+          "correctReaction": "You describe my form precisely — graceful, watchful, and ever present.",
+          "wrongReaction": "You look upon my statues in every temple and still cannot describe what you see.",
+          "trapText": "Stone cat statues flanking the chamber walls pivot slowly to face you with glowing eyes."
+        },
+        {
+          "id": "c4_q4",
+          "type": "TRUE_FALSE",
+          "text": "Bastet was originally a fierce lion-headed goddess before her form softened to a cat.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Yes — I was once as savage as Sekhmet, before the ages gentled my countenance.",
+          "wrongReaction": "Do not mistake my gentle face for weakness — the lion still breathes beneath this calm.",
+          "trapText": "A crack runs up the center of the chamber floor and a roar shakes dust from the ceiling."
+        },
+        {
+          "id": "c4_q5",
+          "type": "RIDDLE",
+          "text": "I guard your home, I stalk through temples on silent paws. Once a lioness of war, now a purring protector. Whom do I serve? Who am I?",
+          "options": ["Bastet", "Sekhmet", "Hathor", "Mut"],
+          "correctAnswer": "Bastet",
+          "correctReaction": "You know my name — and knowing it, you are safe within my chamber.",
+          "wrongReaction": "I have given you every clue written in paw and claw, and still you name another.",
+          "trapText": "The torch flames turn deep violet and the chamber door locks with a heavy stone thud."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Falcon Chamber",
+      "guardian": "Horus",
+      "accentColor": "#C62828",
+      "backgroundDrawable": "egpt_back_5",
+      "symbolDrawable": "egpt_sym_5",
+      "introText": "I am Horus, son of Osiris, lord of the sky and the divine patron of every pharaoh who ever ruled Egypt. From above I see all that happens in these halls. You have come far — now prove your worthiness before a god who has fought for his throne with blood and cunning.",
+      "completeText": "You fight well with your mind, as I fought with strength and will. The crown of knowledge is yours to carry forward.",
+      "questions": [
+        {
+          "id": "c5_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Horus was the god of which domain?",
+          "options": ["The sky and kingship", "The underworld", "Wisdom and writing", "The flood"],
+          "correctAnswer": "The sky and kingship",
+          "correctReaction": "The sky is my domain and every king who sat upon the throne was my living image.",
+          "wrongReaction": "I soar above all Egypt and rule beside every pharaoh — how can you not know this?",
+          "trapText": "A gust of wind tears through the sealed chamber and the red torches flare violently."
+        },
+        {
+          "id": "c5_q2",
+          "type": "TRUE_FALSE",
+          "text": "Every pharaoh was considered the living incarnation of Horus.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Every pharaoh bore my name and my power — in life they were Horus, in death Osiris.",
+          "wrongReaction": "The double crown of Egypt rests upon my authority — do you not know what you walk beneath?",
+          "trapText": "The falcon carvings on the walls seem to turn their heads and fix their gaze upon you."
+        },
+        {
+          "id": "c5_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "What does the Eye of Horus represent?",
+          "options": ["Healing and protection", "Death and rebirth", "Wisdom and knowledge", "Love and beauty"],
+          "correctAnswer": "Healing and protection",
+          "correctReaction": "My eye was healed by Thoth and given as an offering of restoration — you know its power.",
+          "wrongReaction": "The eye that was lost and restored carries a meaning you have failed to grasp.",
+          "trapText": "An eye-shaped stone in the center of the chamber glows red and the air grows oppressively hot."
+        },
+        {
+          "id": "c5_q4",
+          "type": "TRUE_FALSE",
+          "text": "Horus lost his left eye during his battle with Set, which became the moon.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Set tore it away, but Thoth restored it — and what was lost became the light of the night sky.",
+          "wrongReaction": "I bear the scars of that battle to this day — how dare you deny what I carry?",
+          "trapText": "One side of the chamber plunges into shadow as a heavy stone blocks half the torchlight."
+        },
+        {
+          "id": "c5_q5",
+          "type": "RIDDLE",
+          "text": "My right eye is the sun, my left eye the moon. I soar above all pharaohs, my wings casting shadow over all Egypt. Who am I?",
+          "options": ["Horus", "Ra", "Montu", "Shu"],
+          "correctAnswer": "Horus",
+          "correctReaction": "You have named the falcon king — your sight is as sharp as my own.",
+          "wrongReaction": "I cast my shadow over every royal throne and still you do not recognize the one above you.",
+          "trapText": "A thunderous wingbeat shakes the chamber walls and red dust rains from the ceiling."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Wisdom Chamber",
+      "guardian": "Thoth",
+      "accentColor": "#E65100",
+      "backgroundDrawable": "egpt_back_1",
+      "symbolDrawable": "egpt_sym_6",
+      "introText": "I am Thoth, the keeper of all records and the measurer of time itself. Every word spoken and written since the beginning of creation is known to me. I do not punish ignorance with anger — I merely record the result and the consequence follows precisely from the error. Speak accurately.",
+      "completeText": "Your answers have been recorded in the great ledger. They are correct, and the ledger does not lie.",
+      "questions": [
+        {
+          "id": "c6_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Thoth was the god of which domain?",
+          "options": ["Writing, wisdom, and the moon", "The sun and war", "The sea and storms", "Love and fertility"],
+          "correctAnswer": "Writing, wisdom, and the moon",
+          "correctReaction": "Correct on all three counts — I record, I know, and I measure the passing of nights.",
+          "wrongReaction": "I hold the pen that writes the very laws of existence and you cannot name my purpose.",
+          "trapText": "The inscriptions on the chamber walls begin to rearrange themselves into a warning you cannot read."
+        },
+        {
+          "id": "c6_q2",
+          "type": "TRUE_FALSE",
+          "text": "Thoth was often depicted with the head of an ibis.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "The long curved beak of the ibis is my mark — precise, deliberate, built for finding truth.",
+          "wrongReaction": "My image appears on ten thousand temple walls and you dispute what is plainly carved there.",
+          "trapText": "A scroll falls from a high shelf and unrolls across the floor to reveal your name written in red ink."
+        },
+        {
+          "id": "c6_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Thoth was credited with inventing which system?",
+          "options": ["Hieroglyphic writing", "The pyramid design", "The mummification process", "The solar calendar"],
+          "correctAnswer": "Hieroglyphic writing",
+          "correctReaction": "I gave humanity its voice in stone and papyrus — hieroglyphic writing was my gift.",
+          "wrongReaction": "Without my invention, not one word of Egypt's greatness could have been preserved.",
+          "trapText": "The torches dim and the orange light is replaced by the cold glow of moonlight through an unseen opening."
+        },
+        {
+          "id": "c6_q4",
+          "type": "TRUE_FALSE",
+          "text": "Thoth recorded the verdict of the Weighing of the Heart ceremony.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "I stood with my reed and my palette and wrote the outcome of every soul's judgment.",
+          "wrongReaction": "I was present at every weighing since the ceremony began — my records are complete and unalterable.",
+          "trapText": "A set of scales appears in the center of the chamber and begins to tip slowly toward one side."
+        },
+        {
+          "id": "c6_q5",
+          "type": "RIDDLE",
+          "text": "I hold the reed and the scroll. My beak is long and curved. I write the fates of souls as they stand before Osiris. Who am I?",
+          "options": ["Thoth", "Seshat", "Sia", "Hu"],
+          "correctAnswer": "Thoth",
+          "correctReaction": "You have named me correctly — the record has been updated in your favor.",
+          "wrongReaction": "I described myself with considerable precision and still you have written the wrong name.",
+          "trapText": "Your name appears scratched out in the great ledger carved into the chamber wall."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Death Chamber",
+      "guardian": "Anubis",
+      "accentColor": "#212121",
+      "backgroundDrawable": "egpt_back_2",
+      "symbolDrawable": "egpt_sym_7",
+      "introText": "I am Anubis. There is no deceiving me, no bargaining, no second chance beyond this threshold. I have guided every soul that has ever died in Egypt through the darkness of the Duat. You are not dead — yet you stand in the chamber where death is the only examiner. Answer truly.",
+      "completeText": "Your soul is lighter than the feather. You have spoken only truth in my chamber, and I grant you passage.",
+      "questions": [
+        {
+          "id": "c7_q1",
+          "type": "MULTIPLE_CHOICE",
+          "text": "Anubis was the god of which domain?",
+          "options": ["Embalming and the dead", "The sky and stars", "The Nile floods", "Fertility and crops"],
+          "correctAnswer": "Embalming and the dead",
+          "correctReaction": "I am the one who prepares the body and guides the soul — you have stated it correctly.",
+          "wrongReaction": "I wrapped the first mummy and I will wrap the last — and still you do not know my purpose.",
+          "trapText": "Bandages of linen uncoil from the walls and begin to drift through the air of the chamber."
+        },
+        {
+          "id": "c7_q2",
+          "type": "TRUE_FALSE",
+          "text": "Anubis had the head of a jackal.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "The black jackal face is mine — it has watched over the dead since before memory.",
+          "wrongReaction": "You stand before my face and deny what your own eyes see carved into every tomb wall.",
+          "trapText": "A jackal howl echoes through the sealed stone chamber from somewhere deep below."
+        },
+        {
+          "id": "c7_q3",
+          "type": "MULTIPLE_CHOICE",
+          "text": "In the Hall of Two Truths, the heart was weighed against what?",
+          "options": ["A feather of Ma'at", "A golden scarab", "A stone of judgment", "A serpent's scale"],
+          "correctAnswer": "A feather of Ma'at",
+          "correctReaction": "The feather of truth — if your heart is heavier, Ammit devours the soul.",
+          "wrongReaction": "The scales in the Hall of Two Truths have never held anything other than what I have named.",
+          "trapText": "A feather appears in mid-air and drifts slowly downward as the floor creaks beneath you."
+        },
+        {
+          "id": "c7_q4",
+          "type": "TRUE_FALSE",
+          "text": "Anubis guided souls through the Duat (underworld) to their final judgment.",
+          "options": ["True", "False"],
+          "correctAnswer": "True",
+          "correctReaction": "Every soul I have ever guided has walked the path I showed them — this is my eternal duty.",
+          "wrongReaction": "I have walked ten million souls through the Duat and you deny the journey they took.",
+          "trapText": "The floor becomes transparent and the dark void of the Duat appears beneath your feet."
+        },
+        {
+          "id": "c7_q5",
+          "type": "RIDDLE",
+          "text": "I am the last guardian. Black as the night I rule, my scales weigh your very soul. The desert scavenger wears my face. You cannot deceive me. Who am I?",
+          "options": ["Anubis", "Osiris", "Set", "Sokar"],
+          "correctAnswer": "Anubis",
+          "correctReaction": "You have named me — and having named me truthfully, you may pass beyond the final gate.",
+          "wrongReaction": "You stand in my chamber, before my scales, and still you cannot speak my name.",
+          "trapText": "The final gate behind you seals with the sound of a tomb being closed for eternity."
+        }
+      ]
+    }
+  ]
+}
