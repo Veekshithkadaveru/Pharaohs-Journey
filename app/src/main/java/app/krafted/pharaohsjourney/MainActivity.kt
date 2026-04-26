@@ -10,12 +10,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import androidx.lifecycle.viewmodel.compose.viewModel
+import app.krafted.pharaohsjourney.ui.ChamberCompleteScreen
+import app.krafted.pharaohsjourney.ui.ChamberIntroScreen
 import app.krafted.pharaohsjourney.ui.HomeScreen
 import app.krafted.pharaohsjourney.ui.QuestionScreen
 import app.krafted.pharaohsjourney.ui.Screen
@@ -49,7 +51,7 @@ private fun PharaohsJourneyNavHost() {
             route = Screen.ChamberIntro.route,
             arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
         ) {
-            PlaceholderScreen("Chamber Intro")
+            ChamberIntroScreen(viewModel, navController)
         }
         composable(
             route = Screen.Question.route,
@@ -61,7 +63,7 @@ private fun PharaohsJourneyNavHost() {
             route = Screen.ChamberComplete.route,
             arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
         ) {
-            PlaceholderScreen("Chamber Complete")
+            ChamberCompleteScreen(viewModel, navController)
         }
         composable(
             route = Screen.GameOver.route,

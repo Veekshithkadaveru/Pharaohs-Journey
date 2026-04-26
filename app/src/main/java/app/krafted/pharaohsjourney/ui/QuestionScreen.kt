@@ -34,6 +34,7 @@ import app.krafted.pharaohsjourney.ui.theme.FadedHieroglyphic
 import app.krafted.pharaohsjourney.ui.theme.SandParchment
 import app.krafted.pharaohsjourney.ui.theme.TombBlack
 import app.krafted.pharaohsjourney.viewmodel.AnswerPhase
+import app.krafted.pharaohsjourney.ui.TrapOverlay
 import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
 
 @Composable
@@ -184,32 +185,17 @@ fun QuestionScreen(viewModel: JourneyViewModel, navController: NavController) {
             }
         }
 
-        if (answerPhase == AnswerPhase.CORRECT || answerPhase == AnswerPhase.WRONG) {
-            val tintColor = if (answerPhase == AnswerPhase.CORRECT) {
-                Color(0xFF2E7D32).copy(alpha = 0.75f)
-            } else {
-                Color(0xFFC62828).copy(alpha = 0.75f)
-            }
-
+        if (answerPhase == AnswerPhase.CORRECT) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(tintColor),
+                    .background(Color(0xFF2E7D32).copy(alpha = 0.75f)),
                 contentAlignment = Alignment.Center
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier.padding(24.dp)
                 ) {
-                    if (answerPhase == AnswerPhase.WRONG && uiState.trapText != null) {
-                        Text(
-                            text = uiState.trapText!!,
-                            color = SandParchment,
-                            style = MaterialTheme.typography.bodyMedium,
-                            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                            modifier = Modifier.padding(bottom = 8.dp)
-                        )
-                    }
                     uiState.feedbackText?.let { feedback ->
                         Text(
                             text = feedback,
@@ -224,6 +210,13 @@ fun QuestionScreen(viewModel: JourneyViewModel, navController: NavController) {
                     }
                 }
             }
+        }
+        if (answerPhase == AnswerPhase.WRONG) {
+            TrapOverlay(
+                trapText = uiState.trapText,
+                wrongReaction = uiState.feedbackText,
+                onComplete = { viewModel.continueAfterAnswer() }
+            )
         }
     }
 }
