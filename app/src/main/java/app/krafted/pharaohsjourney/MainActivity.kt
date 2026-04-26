@@ -18,9 +18,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import app.krafted.pharaohsjourney.ui.ChamberCompleteScreen
 import app.krafted.pharaohsjourney.ui.ChamberIntroScreen
+import app.krafted.pharaohsjourney.ui.GameOverScreen
 import app.krafted.pharaohsjourney.ui.HomeScreen
 import app.krafted.pharaohsjourney.ui.QuestionScreen
 import app.krafted.pharaohsjourney.ui.Screen
+import app.krafted.pharaohsjourney.ui.VictoryScreen
 import app.krafted.pharaohsjourney.ui.theme.PharaohsJourneyTheme
 import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
 
@@ -69,10 +71,10 @@ private fun PharaohsJourneyNavHost() {
             route = Screen.GameOver.route,
             arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
         ) {
-            PlaceholderScreen("Game Over")
+            GameOverScreen(viewModel, navController)
         }
         composable(Screen.Victory.route) {
-            PlaceholderScreen("Victory")
+            VictoryScreen(viewModel, navController)
         }
         composable(Screen.Leaderboard.route) {
             PlaceholderScreen("Leaderboard")
