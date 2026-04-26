@@ -15,8 +15,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.lifecycle.viewmodel.compose.viewModel
+import app.krafted.pharaohsjourney.ui.HomeScreen
+import app.krafted.pharaohsjourney.ui.QuestionScreen
 import app.krafted.pharaohsjourney.ui.Screen
 import app.krafted.pharaohsjourney.ui.theme.PharaohsJourneyTheme
+import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +37,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun PharaohsJourneyNavHost() {
     val navController = rememberNavController()
+    val viewModel: JourneyViewModel = viewModel()
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(Screen.Splash.route) {
             PlaceholderScreen("Splash")
         }
         composable(Screen.Home.route) {
-            PlaceholderScreen("Home — Tomb Map")
+            HomeScreen(viewModel, navController)
         }
         composable(
             route = Screen.ChamberIntro.route,
@@ -50,7 +55,7 @@ private fun PharaohsJourneyNavHost() {
             route = Screen.Question.route,
             arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
         ) {
-            PlaceholderScreen("Question Screen")
+            QuestionScreen(viewModel, navController)
         }
         composable(
             route = Screen.ChamberComplete.route,
