@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.PharaohsJourney" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.PharaohsJourney.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#5C2400</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_pharaoh</item>
+        <item name="postSplashScreenTheme">@style/Theme.PharaohsJourney</item>
+    </style>
 </resources>

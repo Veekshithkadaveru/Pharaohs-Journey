@@ -66,4 +66,5 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.gson)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.core.splashscreen)
 }

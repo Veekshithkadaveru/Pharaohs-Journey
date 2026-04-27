@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
@@ -16,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import app.krafted.pharaohsjourney.ui.SplashScreen
 import app.krafted.pharaohsjourney.ui.ChamberCompleteScreen
 import app.krafted.pharaohsjourney.ui.ChamberIntroScreen
 import app.krafted.pharaohsjourney.ui.GameOverScreen
@@ -29,6 +31,7 @@ import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
@@ -43,9 +46,9 @@ class MainActivity : ComponentActivity() {
 private fun PharaohsJourneyNavHost() {
     val navController = rememberNavController()
     val viewModel: JourneyViewModel = viewModel()
-    NavHost(navController = navController, startDestination = Screen.Home.route) {
+    NavHost(navController = navController, startDestination = Screen.Splash.route) {
         composable(Screen.Splash.route) {
-            PlaceholderScreen("Splash")
+            SplashScreen(navController)
         }
         composable(Screen.Home.route) {
             HomeScreen(viewModel, navController)
