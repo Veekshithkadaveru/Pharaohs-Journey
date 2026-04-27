@@ -15,6 +15,9 @@ sealed class Screen(val route: String) {
     object GameOver : Screen("game_over/{chamberId}") {
         fun createRoute(chamberId: Int) = "game_over/$chamberId"
     }
+    object Trap : Screen("trap/{chamberId}") {
+        fun createRoute(chamberId: Int) = "trap/$chamberId"
+    }
     object Victory : Screen("victory")
     object Leaderboard : Screen("leaderboard")
 }

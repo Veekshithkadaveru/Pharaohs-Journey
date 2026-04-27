@@ -30,6 +30,10 @@ fun ScarabLives(lives: Int, modifier: Modifier = Modifier) {
                     Image(
                         painter = painterResource(R.drawable.egpt_life_scarab_cracked),
                         contentDescription = null,
+                        colorFilter = androidx.compose.ui.graphics.ColorFilter.colorMatrix(
+                            androidx.compose.ui.graphics.ColorMatrix().apply { setToSaturation(0f) }
+                        ),
+                        alpha = 0.35f,
                         modifier = Modifier.size(32.dp)
                     )
                 }

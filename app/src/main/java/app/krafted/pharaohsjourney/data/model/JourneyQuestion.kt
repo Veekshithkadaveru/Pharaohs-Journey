@@ -3,6 +3,7 @@ package app.krafted.pharaohsjourney.data.model
 data class JourneyQuestion(
     val id: String,
     val type: QuestionType,
+    val difficulty: String,
     val text: String,
     val options: List<String>,
     val correctAnswer: String,

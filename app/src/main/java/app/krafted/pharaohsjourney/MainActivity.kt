@@ -22,6 +22,7 @@ import app.krafted.pharaohsjourney.ui.GameOverScreen
 import app.krafted.pharaohsjourney.ui.HomeScreen
 import app.krafted.pharaohsjourney.ui.QuestionScreen
 import app.krafted.pharaohsjourney.ui.Screen
+import app.krafted.pharaohsjourney.ui.TrapScreen
 import app.krafted.pharaohsjourney.ui.VictoryScreen
 import app.krafted.pharaohsjourney.ui.theme.PharaohsJourneyTheme
 import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
@@ -72,6 +73,12 @@ private fun PharaohsJourneyNavHost() {
             arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
         ) {
             GameOverScreen(viewModel, navController)
+        }
+        composable(
+            route = Screen.Trap.route,
+            arguments = listOf(navArgument("chamberId") { type = NavType.IntType })
+        ) {
+            TrapScreen(viewModel, navController)
         }
         composable(Screen.Victory.route) {
             VictoryScreen(viewModel, navController)

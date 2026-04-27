@@ -10,6 +10,8 @@ import app.krafted.pharaohsjourney.data.db.JourneyProgress
 import app.krafted.pharaohsjourney.data.db.ScoreRecord
 import app.krafted.pharaohsjourney.data.model.Chamber
 import app.krafted.pharaohsjourney.data.model.JourneyQuestion
+import app.krafted.pharaohsjourney.data.model.QuestionType
+import kotlin.math.roundToInt
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,7 +21,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 private const val MAX_LIVES = 3
-private const val POINTS_PER_CORRECT_ANSWER = 100
 private const val FINAL_CHAMBER_ID = 7
 
 enum class AnswerPhase {
@@ -41,7 +42,6 @@ data class JourneyUiState(
     val selectedAnswer: String? = null,
     val answerPhase: AnswerPhase = AnswerPhase.IDLE,
     val feedbackText: String? = null,
-    val trapText: String? = null,
     val completedChamberIds: Set<Int> = emptySet(),
     val currentChamberId: Int = 1,
     val unlockedChamberId: Int = 1,
@@ -79,7 +79,6 @@ class JourneyViewModel @JvmOverloads constructor(
                 selectedAnswer = null,
                 answerPhase = AnswerPhase.IDLE,
                 feedbackText = null,
-                trapText = null,
                 currentChamberId = allowedChamber.id,
                 isChamberComplete = false,
                 isGameOver = false,
@@ -113,8 +112,7 @@ class JourneyViewModel @JvmOverloads constructor(
                 it.copy(
                     selectedAnswer = null,
                     answerPhase = AnswerPhase.IDLE,
-                    feedbackText = null,
-                    trapText = null
+                    feedbackText = null
                 )
             }
 
@@ -148,6 +146,15 @@ class JourneyViewModel @JvmOverloads constructor(
                 )
             }
         }
+    }
+
+    private fun calcPoints(qIdx: Int, lives: Int, question: JourneyQuestion): Int {
+        val base = when (question.type) {
+            QuestionType.RIDDLE -> 200
+            QuestionType.TRUE_FALSE -> 50
+            else -> 100
+        }
+        return (base * (1.0 + qIdx * 0.2) + lives * 25).roundToInt()
     }
 
     private fun loadJourney() {
@@ -194,7 +201,7 @@ class JourneyViewModel @JvmOverloads constructor(
         answer: String,
         state: JourneyUiState
     ) {
-        val newScore = state.score + POINTS_PER_CORRECT_ANSWER
+        val newScore = state.score + calcPoints(state.currentQuestionIndex, state.lives, question)
         val isLastQuestion = state.currentQuestionIndex == chamber.questions.lastIndex
 
         if (isLastQuestion) {
@@ -205,7 +212,6 @@ class JourneyViewModel @JvmOverloads constructor(
                     selectedAnswer = answer,
                     answerPhase = AnswerPhase.CORRECT,
                     feedbackText = question.correctReaction,
-                    trapText = null,
                     score = newScore
                 )
             }
@@ -225,7 +231,6 @@ class JourneyViewModel @JvmOverloads constructor(
                 answerPhase = phase,
                 lives = remainingLives,
                 feedbackText = question.wrongReaction,
-                trapText = question.trapText,
                 isGameOver = remainingLives == 0
             )
         }
@@ -241,8 +246,7 @@ class JourneyViewModel @JvmOverloads constructor(
                 currentQuestion = nextQuestion,
                 selectedAnswer = null,
                 answerPhase = AnswerPhase.IDLE,
-                feedbackText = null,
-                trapText = null
+                feedbackText = null
             )
         }
     }
@@ -264,7 +268,6 @@ class JourneyViewModel @JvmOverloads constructor(
                 selectedAnswer = answer,
                 answerPhase = phase,
                 feedbackText = question.correctReaction,
-                trapText = null,
                 completedChamberIds = completedIds,
                 currentChamberId = chamber.id,
                 unlockedChamberId = calculateUnlockedChamberId(completedIds),

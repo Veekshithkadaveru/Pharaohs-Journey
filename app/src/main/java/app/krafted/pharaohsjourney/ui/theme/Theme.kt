@@ -20,7 +20,17 @@ private val EgyptianDarkScheme = darkColorScheme(
 fun PharaohsJourneyTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = EgyptianDarkScheme,
-        typography = PharaohsJourneyTypography,
-        content = content
-    )
+        typography = PharaohsJourneyTypography
+    ) {
+        androidx.compose.material3.ProvideTextStyle(
+            value = androidx.compose.ui.text.TextStyle(
+                shadow = androidx.compose.ui.graphics.Shadow(
+                    color = androidx.compose.ui.graphics.Color.Black.copy(alpha = 0.85f),
+                    offset = androidx.compose.ui.geometry.Offset(2f, 2f),
+                    blurRadius = 4f
+                )
+            ),
+            content = content
+        )
+    }
 }

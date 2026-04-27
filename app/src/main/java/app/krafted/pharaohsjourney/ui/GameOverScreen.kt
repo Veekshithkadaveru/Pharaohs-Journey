@@ -1,27 +1,44 @@
 package app.krafted.pharaohsjourney.ui
 
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import app.krafted.pharaohsjourney.ui.theme.AncientGold
-import app.krafted.pharaohsjourney.ui.theme.ChamberCrimson
-import app.krafted.pharaohsjourney.ui.theme.SandParchment
 import app.krafted.pharaohsjourney.ui.theme.TombBlack
 import app.krafted.pharaohsjourney.viewmodel.JourneyViewModel
 
@@ -39,84 +56,148 @@ fun GameOverScreen(viewModel: JourneyViewModel, navController: NavController) {
         return
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
-        val bgResId = context.resources.getIdentifier(chamber.backgroundDrawable, "drawable", context.packageName)
+    val bgResId = context.resources.getIdentifier(chamber.backgroundDrawable, "drawable", context.packageName)
+    val anubisResId = context.resources.getIdentifier("egpt_sym_2", "drawable", context.packageName)
+
+    val infiniteTransition = rememberInfiniteTransition(label = "gameover")
+    val floatY by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = -7f,
+        animationSpec = infiniteRepeatable(tween(1250), RepeatMode.Reverse),
+        label = "float"
+    )
+
+    Box(modifier = Modifier.fillMaxSize().background(Color(0xFF050101))) {
         if (bgResId != 0) {
             Image(
                 painter = painterResource(bgResId),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
+                    .graphicsLayer { alpha = 0.16f }
             )
-        } else {
-            Box(modifier = Modifier.fillMaxSize().background(TombBlack))
         }
 
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black.copy(alpha = 0.85f))
+                .background(Color.Black.copy(alpha = 0.68f))
         )
 
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .padding(28.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                "YOU HAVE FALLEN",
-                style = MaterialTheme.typography.displayMedium,
-                color = ChamberCrimson,
-                textAlign = TextAlign.Center
-            )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.weight(1f))
 
-            val symResId = context.resources.getIdentifier(chamber.symbolDrawable, "drawable", context.packageName)
-            if (symResId != 0) {
+            if (anubisResId != 0) {
                 Image(
-                    painter = painterResource(symResId),
+                    painter = painterResource(anubisResId),
                     contentDescription = null,
-                    modifier = Modifier.size(96.dp)
+                    modifier = Modifier
+                        .size(145.dp)
+                        .offset(y = floatY.dp)
                 )
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(16.dp))
+
             Text(
-                text = "The trap has claimed your soul. The guardian ${chamber.guardian} shows no mercy.",
-                color = SandParchment,
-                style = MaterialTheme.typography.bodyLarge,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 16.dp)
+                text = "FALLEN",
+                fontFamily = FontFamily.Serif,
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFFEF5350),
+                letterSpacing = 2.sp
             )
-            Spacer(modifier = Modifier.height(48.dp))
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = chamber.name,
+                fontFamily = FontFamily.Serif,
+                fontSize = 12.sp,
+                color = Color.White.copy(alpha = 0.55f),
+                letterSpacing = 2.sp
+            )
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = "\"The sands are not merciful.\"",
+                fontFamily = FontFamily.Default,
+                fontStyle = FontStyle.Italic,
+                fontSize = 13.sp,
+                color = Color.White.copy(alpha = 0.45f),
+                lineHeight = 20.sp,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(22.dp))
+
+            EgyptDivider(accentColor = Color(0xFFEF5350))
+
+            Text(
+                text = "THE CHAMBER RESETS FROM THE BEGINNING",
+                fontFamily = FontFamily.Serif,
+                fontSize = 10.sp,
+                color = Color.White.copy(alpha = 0.32f),
+                letterSpacing = 1.5.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(vertical = 16.dp)
+            )
 
             Box(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 40.dp)
+                    .border(1.5.dp, Color(0xFFEF5350).copy(alpha = 0.5f), RoundedCornerShape(11.dp))
+                    .clip(RoundedCornerShape(11.dp))
+                    .background(Color(0xFFEF5350).copy(alpha = 0.12f))
                     .clickable {
                         viewModel.restartCurrentChamber()
                         navController.navigate(Screen.ChamberIntro.createRoute(chamberId)) {
                             popUpTo(Screen.GameOver.createRoute(chamberId)) { inclusive = true }
                         }
-                    },
+                    }
+                    .padding(horizontal = 36.dp, vertical = 14.dp),
                 contentAlignment = Alignment.Center
             ) {
-                val btnResId = context.resources.getIdentifier("egpt_decor_button", "drawable", context.packageName)
-                if (btnResId != 0) {
-                    Image(
-                        painter = painterResource(btnResId),
-                        contentDescription = null,
-                        contentScale = ContentScale.FillBounds,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(52.dp)
-                    )
-                }
-                Text("Restart Chamber", style = MaterialTheme.typography.titleLarge, color = SandParchment)
+                Text(
+                    text = "TRY AGAIN ↺",
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 13.5.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 2.sp,
+                    color = Color(0xFFEF9A9A)
+                )
             }
+
+            Spacer(modifier = Modifier.height(14.dp))
+
+            Box(
+                modifier = Modifier
+                    .border(1.5.dp, AncientGold.copy(alpha = 0.5f), RoundedCornerShape(11.dp))
+                    .clip(RoundedCornerShape(11.dp))
+                    .background(AncientGold.copy(alpha = 0.10f))
+                    .clickable {
+                        navController.popBackStack(Screen.Home.route, inclusive = false)
+                    }
+                    .padding(horizontal = 36.dp, vertical = 14.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "HOME ⌂",
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 13.5.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 2.sp,
+                    color = AncientGold
+                )
+            }
+
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }
